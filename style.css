@@ -1,0 +1,667 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f9e6ec;
+  color: #2f1132;
+}
+
+h1,
+h2 {
+  font-family: "Oswald", sans-serif;
+  margin-bottom: 1.5rem;
+}
+
+h3,
+h4,
+p {
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 1.5rem;
+  line-height: 1.8rem;
+}
+
+h1 {
+  font-size: 2.6rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* -------------- Menu start ----------------- */
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.logo a {
+  margin: 0 3rem;
+  text-decoration: none;
+}
+
+.logo a:hover {
+  text-decoration: none;
+}
+
+.logo img {
+  width: 5rem;
+}
+
+ul {
+  list-style-type: none;
+  gap: 4rem;
+  margin: 0 3rem;
+  padding: 0;
+  display: flex;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #2f1132;
+  font-family: "Open Sans", sans-serif;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+ul li a:hover {
+  color: #be0e78;
+}
+
+/* Følgende dropdown er lavet ved hjælp af chatGPT */
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown_knap {
+  display: inline-block;
+  text-decoration: none;
+  color: #2f1132;
+}
+
+.dropdown_indhold {
+  display: none;
+  position: absolute;
+  background-color: #fff6fb;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  min-width: 160px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown_indhold {
+  display: block;
+}
+
+.dropdown_indhold a {
+  color: #2f1132;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-transform: capitalize;
+}
+
+.dropdown_indhold a:hover {
+  background-color: #f6ebf1;
+}
+
+/* -------------- Menu slut ----------------- */
+
+/* -------------- Forside intro start ----------------- */
+
+.intro {
+  margin: 0 3rem;
+  padding: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.velkommen {
+  margin-bottom: 2.5rem;
+}
+
+.vinker {
+  display: inline;
+}
+
+#hand {
+  display: inline-block;
+}
+
+.vink {
+  animation-name: vink;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes vink {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(15deg);
+  }
+  40% {
+    transform: rotate(-15deg);
+  }
+  60% {
+    transform: rotate(10deg);
+  }
+  80% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.portrait {
+  border-radius: 50%;
+  width: 200px;
+  transition: transform 0.8s ease;
+  margin-bottom: 2.5rem;
+}
+
+.portrait:hover {
+  transform: scaleX(-1);
+}
+
+.powerkvinde {
+  color: #be0e78;
+}
+
+.titel {
+  margin-bottom: 1rem;
+}
+
+.slut_p {
+  font-style: italic;
+  margin-bottom: 0rem;
+}
+
+/* -------------- Forside intro slut ----------------- */
+
+/* -------------- (Forside) Lidt om mig start ----------------- */
+
+.lidt_container {
+  background-color: #d4dcff;
+}
+
+.farve_sektion {
+  margin: 0 3rem;
+  padding: 2rem;
+  padding-bottom: 3rem;
+}
+
+.grid_3 {
+  gap: 1.5rem;
+}
+
+.om_img {
+  width: 100px;
+  display: block;
+  margin: 0 auto;
+}
+
+.lilla_knap {
+  background-color: #d4dcff;
+  display: inline-block;
+  margin: 0 auto;
+  margin-top: 1.5rem;
+  border: 2px solid #2f1132;
+  border-radius: 20px;
+  color: #2f1132;
+  cursor: pointer;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  line-height: 15px;
+  padding: 15px 40px;
+  transition: all 300ms ease;
+}
+
+.lilla_knap:hover {
+  color: #d4dcff;
+  background-color: #2f1132;
+  border: 2px solid #2f1132;
+}
+
+/* -------------- (Forside) Lidt om mig slut ----------------- */
+
+/* -------------- Mine projekter start ----------------- */
+
+.projekter_container {
+  background-color: #c7efcf;
+}
+
+.overskrift {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.projekt_grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-content: start;
+}
+
+.projekt_kasse {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #e3f3ea;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.projekt_kasse img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.projekt_kasse:hover {
+  transform: scale(1.1);
+  transition: transform 0.4s ease;
+}
+
+.kasse_tekst {
+  margin: 1rem;
+}
+
+.kasse_tekst a {
+  text-decoration: underline;
+  color: #2f1132;
+}
+
+.tema {
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+}
+
+.se_projekt {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.kasse_tekst a .arrow_right {
+  width: 1.8rem;
+  margin-bottom: 0.3rem;
+}
+
+.projekt_link {
+  margin-bottom: 0.5rem;
+}
+
+.knap_container {
+  text-align: center;
+}
+
+.green_knap {
+  background-color: #c7efcf;
+  display: inline-block;
+  margin: 0 auto;
+  margin-top: 3rem;
+  border: 2px solid #2f1132;
+  border-radius: 20px;
+  color: #2f1132;
+  cursor: pointer;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  line-height: 15px;
+  padding: 15px 40px;
+  transition: all 300ms ease;
+}
+
+.green_knap:hover {
+  color: #c7efcf;
+  background-color: #2f1132;
+  border: 2px solid #2f1132;
+}
+
+/* -------------- Mine projekter slut ----------------- */
+
+/* -------------- Min portfolio start ----------------- */
+
+.overskrift3 {
+  margin-top: 0rem;
+  margin-bottom: 2rem;
+}
+
+.portfolio {
+  margin-bottom: 3rem;
+}
+
+.portfolio_icon {
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio_icon img {
+  width: 100px;
+}
+
+.se_projekt2 {
+  display: flex;
+  align-items: center;
+  margin-top: 0rem;
+}
+
+.kasse_tekst a .external_link {
+  width: 2.5rem;
+  margin-bottom: 0.4rem;
+}
+
+/* -------------- Min portfolio slut ----------------- */
+
+/* -------------- 02_web start ----------------- */
+
+.list_items {
+  display: block;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  line-height: 2rem;
+  list-style-type: disc;
+}
+
+.overskrift2 {
+  margin-top: 0rem;
+  margin-bottom: 3rem;
+}
+
+.kompetencer {
+  background-color: #ffd7c0;
+}
+
+.projekt_kasse2 {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #f4dde4;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  width: 350px;
+}
+
+.opg_img {
+  height: 230px;
+  width: auto;
+  object-fit: cover;
+}
+
+/* -------------- 02_web slut ----------------- */
+
+/* -------------- 03_ux start ----------------- */
+
+.opg_grid {
+  display: grid;
+  gap: 30px;
+}
+
+/* -------------- 03_ux slut ----------------- */
+
+/* -------------- Om mig start ----------------- */
+
+.hej {
+  margin-top: 2rem;
+}
+
+.mig_container {
+  margin: 0 3rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.mig_tekst {
+  max-width: 65ch;
+}
+
+.mig_foto {
+  width: 375px;
+  border-radius: 15px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cv_container {
+  background-color: #ffd7c0;
+}
+
+.cv_tekst {
+  margin-bottom: 1.5rem;
+}
+
+.cv_tekst h3 {
+  color: #be0e78;
+}
+
+.cv_slut {
+  margin-bottom: 3rem;
+}
+
+.farve_sektion2 {
+  margin: 0 3rem;
+  padding: 2rem;
+  padding-bottom: 3rem;
+}
+
+.farve_sektion2 h3,
+h4 {
+  margin-bottom: 6px;
+}
+
+.farve_sektion2 p {
+  font-size: 0.8rem;
+  margin-bottom: 1px;
+}
+
+.talent_bar1 {
+  width: 90%;
+  height: 25px;
+  background-color: #9dbf9e;
+  margin-bottom: 1rem;
+}
+
+.talent_bar2 {
+  width: 65%;
+  height: 25px;
+  background-color: #9dbf9e;
+  margin-bottom: 1rem;
+}
+
+.talent_bar3 {
+  width: 60%;
+  height: 25px;
+  background-color: #9dbf9e;
+  margin-bottom: 1rem;
+}
+
+.toptalenter {
+  margin-bottom: 0;
+  font-weight: 700;
+}
+
+.certificeringer_container {
+  background-color: #abdeac;
+}
+
+.certifikat {
+  width: 2.5rem;
+  height: 100%;
+  object-fit: cover;
+  margin-bottom: 0.4rem;
+}
+
+.certifikat_link {
+  text-decoration: underline;
+  color: #2f1132;
+  margin-bottom: 0.4rem;
+}
+
+.certifikat_img {
+  width: 350px;
+  height: 275px;
+  display: block;
+}
+
+/* -------------- Om mig slut ----------------- */
+
+/* -------------- Footer start ----------------- */
+
+footer {
+  padding: 3rem 0 2rem 0;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(219, 197, 204, 0.5);
+}
+
+.footer_logo {
+  width: 7rem;
+  margin-bottom: 1rem;
+}
+
+.footer {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+}
+
+.footer img {
+  width: 70px;
+}
+
+.footer img:hover {
+  opacity: 0.6;
+}
+
+.kodet_af {
+  margin: 0 auto;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* -------------- Footer slut ----------------- */
+
+@media (min-width: 1000px) {
+  /* -------------- (Forside) Lidt om mig start ----------------- */
+  .grid_3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  /* -------------- (Forside) Lidt om mig slut ----------------- */
+
+  /* -------------- Mine projekter start ----------------- */
+  .projekt_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    align-content: start;
+  }
+  /* -------------- Mine projekter slut ----------------- */
+  .grid_2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+  }
+
+  /* -------------- 03_ux start ----------------- */
+  .opg_grid {
+    display: flex;
+    gap: 30px;
+  }
+  /* -------------- 03_ux slut ----------------- */
+  .footer {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+  }
+  .hej {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 999px) {
+  /* -------------- (Forside) Lidt om mig start ----------------- */
+  .grid_3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  /* -------------- (Forside) Lidt om mig slut ----------------- */
+  /* -------------- Mine projekter start ----------------- */
+  .projekt_grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    align-content: start;
+  }
+  /* -------------- Mine projekter slut ----------------- */
+  .footer {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+  }
+  .shecodes {
+    margin-top: 3.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* -------------- Mine projekter start ----------------- */
+  .projekt_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    align-content: start;
+  }
+  /* -------------- Mine projekter slut ----------------- */
+}
+
+@media (max-width: 700px) {
+  ul {
+    list-style-type: none;
+    gap: 2rem;
+    margin: 0 3rem;
+    padding: 0;
+    display: flex;
+  }
+
+  .certifikat_img {
+    width: 250px;
+    height: 175px;
+  }
+
+  .mig_foto {
+    width: 250px;
+  }
+
+  .projekt_kasse2 {
+    width: 275px;
+  }
+
+  .shecodes {
+    margin-top: 3.5rem;
+  }
+}
